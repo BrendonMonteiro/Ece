@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[ECE] Ouvidoria</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="https://i.imgur.com/esmIBWE.gif" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.7.1/css/OverlayScrollbars.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/default.css?1719822682" />
+
+    <link rel="stylesheet" href="./assets/css/responsive.css?" />
+    <link rel="stylesheet" href="./assets/css/emojis.css?" />
+    <link rel="stylesheet" href="./assets/css/themes.css?" />
+    <link rel="stylesheet" href="./assets/css/modalPost0.css?1719822682" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css"
+    />
+    <script src="./config.inc.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"
+      integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js"
+      integrity="sha256-hoZ4IJEICzE5WkO5BNpeld27HjOZrSOuz0IWD8MoKdM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js"
+      integrity="sha512-mMe7BAZPOkGbq+zhRBMNV3Q+5ZDzcUEOJoUYXbHpEcODkDBYbttaW7P108jX66AQgwgsAjvlP4Ayb/XLJZfmsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sceditor@3/minified/themes/default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="./assets/js/controller.js?150"></script>
+    <script src="./assets/js/autosize.min.js?22"></script>
+    <script src="./assets/js/default.js?1719822682"></script>
+    <script src="./assets/js/tofaci.js?22"></script>
+    <script src="./assets/js/truePage.js?22"></script>
+    <script src="./assets/js/updates.js?"></script>
+    <script src="https://cdn.ckeditor.com/4.20.1/full/ckeditor.js"></script>
+    <style>
+      html {
+        height: 100%;
+        background: linear-gradient(90deg, #660000, #460202);
+        background-size: 200% 200%;
+        background-attachment: fixed;
+        animation: gradientAnimation 15s ease infinite;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        overflow-y: auto;
+        background: transparent;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 800px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .logo {
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+  margin: 1%;
+  position: relative;
+  z-index: 0;
+  margin-top: -10px;
+}
+
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+      ::selection {
+        background-color: #2b0404;
+        color: #c97e7e;
+      }
+
+      .form-container {
+        display: none;
+        margin-top: -10px;
+        margin-bottom: 2rem;
+        padding: 20px;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.5s ease;
+      }
+
+      .form-container.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
+        height: 55px;
+        background-color: #e7e7e7;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #282828;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-container input:focus,
+      .form-container select:focus,
+      .form-container textarea:focus {
+        border-color: #460202;
+      }
+
+      .form-container input::placeholder,
+      .form-container textarea::placeholder {
+        color: #282828;
+      }
+
+      .form-container select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding-right: 30px;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px 16px;
+      }
+
+      .form-container .checkbox {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        font-size: 14px;
+        color: #545353;
+      }
+
+      .form-container .checkbox input {
+        width: auto;
+        margin-right: 10px;
+      }
+
+      .form-container button {
+    width: 100%; /* Faz o botão ocupar toda a largura disponível do container */
+    height: 70px;
+    font-family: "Poppins", sans-serif;
+    padding: 15px; /* Adiciona espaçamento interno */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    border-radius: 10px; /* Deixa as bordas arredondadas */
+    background-color: #5f0909; /* Cor de fundo */
+    font-family: Poppins;
+     color: white; /* Cor do texto */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Indica que o botão é clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza alterações de estado */
+}
+
+      .form-container button:hover {
+        background-color: #380606; /* Cor ao passar o mouse */
+        transform: scale(1.02); /* Leve aumento ao passar o mouse */
+}
+
+      .form-container .row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .form-container .row input,
+      .form-container .row select,
+      .form-container .row textarea {
+        width: calc(50% - 5px);
+      }
+
+      body.scrollable .container {
+        height: auto;
+        transform: translateY(10vh);
+      }
+
+      input.invalid,
+      select.invalid,
+      textarea.invalid {
+        border: 2px solid #d9534f;
+        background-color: #f2dede;
+      }
+
+      input.invalid:focus,
+      select.invalid:focus,
+      textarea.invalid:focus {
+        border-color: #a94442;
+        outline: none;
+      }
+
+      ::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #490707;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #700e0e;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #700e0e;
+      }
+      
+      body {
+        scrollbar-width: thin;
+        scrollbar-color: #490707 #700e0e;
+      }
+
+      .credits {
+        text-align: center;
+        margin-top: 10px;
+        padding: -20px;
+        font-size: 14px;
+        color: #ffffffc8;
+
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease;
+      }
+
+      .credits p strong {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .credits i {
+        margin-right: 8px;
+      }
+
+      .credits .line-break {
+        display: block;
+        margin-top: -10px;
+      }
+
+      .credits.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Estilos gerais (já aplicados a dispositivos móveis com ajustes menores para desktop) */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo {
+  width: 100%;
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  margin-top: -60px;
+}
+
+/* Estilos específicos para telas pequenas (smartphones) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+    transform: none;
+  }
+
+  .logo {
+    max-width: 250px;
+    margin-top: -40px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-container input,
+  .form-container select,
+  .form-container textarea {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .form-container button {
+    height: 60px;
+    font-size: 14px;
+  }
+
+  .credits {
+    font-size: 12px;
+  }
+}
+
+/* Estilos específicos para telas muito pequenas (iPhone SE, Android pequenos) */
+@media (max-width: 375px) {
+  .logo {
+    max-width: 200px;
+  }
+
+  .form-container input,
+  .form-container select,
+  .form-container textarea {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .credits {
+    padding: 10px;
+  }
+}
+
+/* Estilos para tablets e telas maiores */
+@media (min-width: 768px) {
+  .container {
+    max-width: 650px;
+  }
+}
+
+      /* Media Queries */
+      @media only screen and (max-width: 700px) {
+        body {
+          margin: 0.5rem;
+          margin-left: 0.5rem;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          font-family: "Poppins", sans-serif;
+          overflow-y: auto;
+          background: transparent;
+        }
+
+        .form-container {
+          margin-left: 0.5rem;
+        }
+
+        .sem-sublinhado {
+          text-decoration: none; /* Remove o sublinhado */
+        }
+
+      }
+      .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #420808;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Mantém o loader acima de todo o conteúdo */
+        }
+
+        .load {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .load img {
+            position: absolute;
+            border-radius: 50%;
+            animation: spin 2s ease infinite;
+        }
+
+        .load img:nth-child(1) {
+            animation-delay: -1.5s;
+        }
+
+        .load img:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .load img:nth-child(3) {
+            animation-delay: -0.5s;
+        }
+
+        .load img:nth-child(4) {
+            animation-delay: 0s;
+        }
+
+        @keyframes spin {
+            0%, 100% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(160%);
+            }
+            50% {
+                transform: translate(160%, 160%);
+            }
+            75% {
+                transform: translate(0, 160%);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 2s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .icon {
+            width: 25px;
+            height: auto;
+        }
+          /* Estilização do fundo embaçado */
+  .overlay {
+    position: fixed;
+    font-family: "Poppins", sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+  }
+
+  /* Estilização da pop-up */
+  .popup {
+        position: fixed;
+        font-family: "Poppins", sans-serif;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        background: rgb(255, 255, 255); /* Fundo semi-transparente */
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        opacity: 0; /* Inicialmente invisível */
+        transform: translateX(20px); /* Leve deslocamento inicial */
+        transition: opacity 0.8s ease, transform 0.8s ease; /* Transição suave */
+    }
+
+    .popup.show {
+        opacity: 1; /* Visível */
+        transform: translateX(0); /* Sem deslocamento */
+    }
+
+    .popup.hide {
+        opacity: 0; /* Desaparece */
+        transform: translateX(500px); /* Move para fora da tela pela direita */
+    }
+
+    .popup-content {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .close-popup {
+    position: absolute;
+    right: 10px;
+    margin-top: 32%;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.close-popup:hover {
+    color: red; /* Cor muda ao passar o mouse */
+}
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .overlay {
+    position: fixed;
+    font-family: "Poppins", sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+  }
+
+  /* Estilização da pop-up */
+  .popup3 {
+    position: fixed;
+    font-family: "Poppins", sans-serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    text-align: center;
+    display: none;
+  }
+
+  .popup3 h2 {
+    font-family: "Poppins", sans-serif;
+    margin: 0 0 10px;
+  }
+
+  .popup3 button {
+    background: #500a0a;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .popup3 button:hover {
+    font-family: "Poppins", sans-serif;
+    background: #350606;
+  }
+  #loading-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #500a0a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-image {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .loading-image img {
+      width: 32px;
+      height: 32px;
+      opacity: 0.2;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+
+    .loading-image img:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .loading-image img:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .loading-image img:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.2;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    #loading-screen {
+        transition: opacity 1s ease-out;
+    }
+
+    .loading-text {
+      font-size: 18px;
+      color: white;
+      margin-top: 10px;
+    }
+    #bbcode-controls {
+  display: none;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  text-align: left; /* Alinha os botões à esquerda */
+}
+
+#bbcode-controls button {
+  background-color: #f4f4f4;
+  color: #000000;
+  border: 1px solid #fff;
+  padding: 5px;
+  margin: 2px;
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 18px; /* Centraliza o texto verticalmente */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#bbcode-controls button:hover {
+  background-color: #e9e9e9;
+  transform: scale(1.2); /* Aumenta o botão ao passar o mouse */
+}
+
+#bbcode-controls button:active {
+  background-color: #e9e9e9;
+}
+
+#bbcode-controls button#bold:hover {
+  font-weight: bold; /* Efeito de negrito no botão "B" */
+}
+
+#bbcode-controls button#underline:hover {
+  text-decoration: underline; /* Efeito de sublinhado no botão "U̲" */
+}
+
+/* Padronizando o seletor de cor */
+#bbcode-controls input[type="color"] {
+  height: 35px;
+  width: 35px;
+  margin: 2px;
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#bbcode-controls input[type="color"]:hover {
+    background-color: #e9e9e9;
+    transform: scale(1.2); /* Aumenta o botão ao passar o mouse */
+}
+
+#bbcode-controls input[type="color"]:active {
+    background-color: #e9e9e9;
+}
+
+    </style>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <div id="popup-info" class="popup">
+        <div class="popup-content">
+            <button class="close-popup" onclick="closePopupInfo()">&times;</button>
+            <p style="text-align: justify;">
+                A <b style="color: #500a0a;">Ouvidoria</b> é um espaço dedicado à postagem de contribuições
+                ao <b style="color: #500a0a;">Esquadrão do Corpo Executivo</b>, à vista da melhoria e transparência da subcompanhia.
+            </p>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="popup3" id="successPopup3">
+        <b style="color: #500a0a;"><h2>Postagem realizada!</h2></b>
+        <p>Sua proposta foi enviada com sucesso! <br><b style="color: #500a0a;"><i>#Equilíbrio&União!</i></b></p>
+        <button onclick="closePopup3()">Conferir Relatório</button>
+    </div>
+        <div id="loading-screen">
+            <div class="loading-image">
+              <img src="https://i.imgur.com/esmIBWE.gif" alt="Loading">
+              <img src="https://i.imgur.com/esmIBWE.gif" alt="Loading">
+              <img src="https://i.imgur.com/esmIBWE.gif" alt="Loading">
+            </div>
+    </div>
+  <div class="container">
+  <div class="logo-container">
+    <img class="logo" alt="Logo" src="https://i.imgur.com/BeYKNMD.png" />
+  </div>
+  <div class="form-container" id="form1">
+    <form onsubmit="event.preventDefault(); submitForm1();" id="enviar_rl">   
+        <select name="tipo_ouvi" required style="width: 100%; height: 75px; font-size: 16px;" onchange="toggleFields()">
+            <option value="" disabled selected>Tipo</option>
+            <option value="Correção">Correção</option>
+            <option value="Sugestão">Sugestão</option>
+            <option value="Projeto">Projeto</option>
+        </select>
+        <input required name="nick_name" id="nick_name" placeholder="Seu nickname" type="text" />
+        <input name="tituloouv" id="tituloouv" placeholder="Título/Documento" type="text" />
+        <input name="descricao" id="descricao" placeholder="Trecho Atual" type="text" />
+        <input name="descricaoatual" id="descricaoatual" placeholder="Trecho Sugerido" type="text" />
+        <input name="comentariosouv" id="comentariosouv" placeholder="Considerações" type="text" />
+        <input required name="data" type="hidden" id="data" />
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+  <div class="credits">
+    <p>
+      <i class="fas fa-code"></i> Desenvolvimento por <strong>.Brendon</strong>.
+    </p>
+    <p class="line-break">
+      <i class="far fa-registered"></i> Todos os direitos reservados ao
+      <strong> Esquadrão do Corpo Executivo</strong>.
+    </p>
+  </div>
+</div>
+</div>
+<textarea id="fa-generated-message" style="display: none;"></textarea>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://forumeiros.github.io/assets/src/form-generator/form-replace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+  document.addEventListener("contextmenu", (e) => e.preventDefault()); 
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "s" || e.key === "S")) {
+        e.preventDefault();
+    }
+    if (e.keyCode === 123) { // F12
+        e.preventDefault();
+    }
+});
+</script>
+<script>
+  document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.shiftKey && event.key === "I") {
+      event.preventDefault();
+      alert("Opa! Acho que você não precisa disso... :D");
+    }
+  });
+</script>
+
+<script>
+let activeField = null; // Armazena o campo ativo
+
+function toggleFields() {
+    const tipo = document.querySelector('select[name="tipo_ouvi"]').value;
+    const descricao = document.getElementById('descricao');
+    const descricaoAtual = document.getElementById('descricaoatual');
+    const tituloouv = document.getElementById('tituloouv');
+    const autor = document.getElementById('nick_name');
+    const consi = document.getElementById('comentariosouv');
+    const bbcodeControls = document.getElementById('bbcode-controls');
+
+    if (tipo === "Projeto") {
+        autor.placeholder = "Seu nickname";
+        autor.required = true;
+        autor.style.display = "block";
+        consi.required = true;
+        consi.style.display = "block";
+        descricao.placeholder = "Proposta";
+        descricao.required = true;
+        descricao.style.display = "block";
+        tituloouv.required = true;
+        tituloouv.style.display = "block";
+        descricaoAtual.required = false;
+        descricaoAtual.style.display = "none";
+        bbcodeControls.style.display = "block"; 
+    } else if (tipo === "Correção" || tipo === "Sugestão") {
+        autor.placeholder = "Seu nickname";
+        autor.required = true;
+        autor.style.display = "block";
+        descricao.placeholder = "Trecho Atual";
+        descricao.required = true;
+        consi.required = true;
+        consi.style.display = "block";
+        descricaoAtual.required = true;
+        tituloouv.required = true;
+        tituloouv.style.display = "block";
+        descricao.style.display = "block";
+        descricaoAtual.style.display = "block";
+        bbcodeControls.style.display = "block"; 
+    } else {
+        descricao.required = false;
+        descricaoAtual.required = false;
+        consi.style.display = "none";
+        descricao.style.display = "none";
+        tituloouv.style.display = "none";
+        descricaoAtual.style.display = "none";
+        bbcodeControls.style.display = "none"; 
+        activeField = null; 
+    }
+}
+
+// Atualizar o campo ativo quando o usuário clicar em um campo de entrada
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("textarea, input").forEach(field => {
+        field.addEventListener("focus", () => {
+            activeField = field;
+        });
+    });
+
+    document.getElementById('nick_name').style.display = "none";
+    document.getElementById('descricao').style.display = "none";
+    document.getElementById('descricaoatual').style.display = "none";
+    document.getElementById('tituloouv').style.display = "none";
+    document.getElementById('comentariosouv').style.display = "none";
+});
+
+// Função para aplicar BBCode no campo ativo
+function applyBBCode(style) {
+    if (!activeField) return; // Se nenhum campo estiver ativo, não faz nada
+
+    let selectionStart = activeField.selectionStart;
+    let selectionEnd = activeField.selectionEnd;
+    let text = activeField.value;
+
+    let bbcodeStart = `[${style}]`;
+    let bbcodeEnd = `[/${style}]`;
+
+    activeField.value = text.substring(0, selectionStart) + bbcodeStart + 
+                        text.substring(selectionStart, selectionEnd) + 
+                        bbcodeEnd + text.substring(selectionEnd);
+}
+
+// Função para aplicar cor selecionada no campo ativo
+function applyColorBBCode() {
+    if (!activeField) return; // Se nenhum campo estiver ativo, não faz nada
+
+    const color = document.getElementById('color-picker').value;
+    let selectionStart = activeField.selectionStart;
+    let selectionEnd = activeField.selectionEnd;
+    let text = activeField.value;
+
+    let bbcodeStart = `[color=${color}]`;
+    let bbcodeEnd = `[/color]`;
+
+    activeField.value = text.substring(0, selectionStart) + bbcodeStart + 
+                        text.substring(selectionStart, selectionEnd) + 
+                        bbcodeEnd + text.substring(selectionEnd);
+}
+
+</script>
+<script>
+  // Função para formatar a data no formato "dd/mm/yyyy HH:MM:SS"
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Mês começa do zero
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  }
+
+  // Preencher o campo invisível com a data e hora formatada
+  document.getElementById('data').value = formatDate(new Date());
+</script>
+<script>
+    // Função para fechar o pop-up de informações
+    function closePopupInfo() {
+        const popup = document.getElementById('popup-info');
+        popup.classList.remove('show'); // Remove visibilidade
+        popup.classList.add('hide'); // Adiciona o efeito de deslizar para fora
+        setTimeout(() => {
+            popup.style.display = 'none'; // Remove completamente após a transição
+        }, 800); // Tempo igual ao da transição no CSS
+    }
+
+    // Função para exibir o pop-up de informações com efeito
+    function showPopup() {
+        const popup = document.getElementById('popup-info');
+        popup.classList.add('show');
+    }
+
+    // Exibe o pop-up automaticamente após o carregamento da página
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('popup-info');
+        popup.style.display = 'block'; // Garante que o pop-up esteja visível no DOM
+        setTimeout(showPopup, 2000); // Leve atraso para ativar a transição
+    });
+
+    // Função de fechamento para o pop-up de sucesso
+    function closePopup3() {
+        document.querySelector(".overlay").style.display = "none";
+        document.getElementById("successPopup3").style.display = "none";
+  
+        // Redireciona para a página de relatórios
+        window.location.href =
+            "https://docs.google.com/spreadsheets/d/1UsVfRjdZoqupZIgLZfKniVHMimDbo3CIAAtkYKl8TJk/edit?gid=1076640812#gid=1076640812";
+    }
+
+    // Função para mostrar o pop-up de sucesso
+    function showSuccessPopup3() {
+        // Simula tempo de envio antes de reativar o botão
+        setTimeout(() => {
+            document.querySelector(".overlay").style.display = "block";
+            document.getElementById("successPopup3").style.display = "block";
+        }, 1000);
+    }
+
+    // Função genérica para enviar formulários
+    function submitForm(formId) {
+        const botao = document.querySelector(`#${formId} button[type='submit']`);
+        botao.textContent = "Enviando...";
+        botao.disabled = true;
+
+        let formData = $(`#${formId} form`).serializeArray();
+        let processedData = processFields(formData);
+
+        $.ajax({
+            url: "https://api.apispreadsheets.com/data/ieG2Lehvzw2GMfN8/",
+            type: "post",
+            data: processedData,
+            success: function(response) {
+                console.log("Formulário enviado com sucesso!", response);
+                showSuccessPopup3();
+            },
+            error: function(xhr, status, error) {
+                console.error("Erro ao enviar formulário:", error);
+                botao.textContent = "Enviar";
+                botao.disabled = false;
+                alert("Erro ao enviar o formulário. Tente novamente.");
+            }
+        });
+    }
+
+    // Funções específicas para enviar os formulários
+    function submitForm1() { submitForm("form1"); }
+
+    // Função para processar os campos do formulário (placeholder, ajuste conforme necessário)
+    function processFields(data) {
+        // Aqui você pode realizar qualquer processamento necessário nos dados antes de enviá-los
+        return data;
+    }
+</script> 
+
+<script>
+    let activeForm = null;
+  let currentIndex = 0;
+  const buttons = document.querySelectorAll(".button");
+  const totalButtons = buttons.length;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const credits = document.querySelector(".credits");
+    setTimeout(() => {
+      credits.classList.add("show");
+    }, 500); // Pequeno atraso para permitir a transição
+  });
+
+  function toggleForm(formId) {
+    const newForm = document.getElementById(formId);
+    const body = document.body;
+
+    if (activeForm && activeForm !== newForm) {
+      activeForm.style.display = "none";
+      activeForm.classList.remove("active");
+    }
+
+    newForm.style.display = "flex";
+    setTimeout(() => {
+      newForm.classList.add("active");
+      newForm.style.display = "block";
+    }, 10); // Pequeno atraso para permitir a transição
+    activeForm = newForm;
+    body.classList.add("scrollable");
+  }
+
+  toggleForm("form1");
+
+  </script>
+  <script>
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", function(event) {
+            // Evita o envio imediato do formulário para ver o efeito
+            event.preventDefault();
+            
+            // Seleciona o botão de envio dentro do formulário atual
+            const botao = form.querySelector("button[type='submit']");
+            botao.textContent = "Enviando...";
+            botao.disabled = true;
+
+            // Simula um tempo de espera ou envio
+            setTimeout(() => {
+                botao.textContent = "Enviado!";
+            }, 2000); // 2000ms para exemplo; remova o setTimeout no uso real
+        });
+    });
+</script>
+
+<script>
+  window.addEventListener("load", () => {
+     setTimeout(() => {
+         let loadingScreen = document.getElementById('loading-screen');
+         loadingScreen.style.opacity = '0';
+         setTimeout(() => {
+             loadingScreen.style.display = 'none';
+             document.getElementById('main-content').style.display = 'flex';
+         }, 900); // Tempo do fade-out
+     }, 1400);
+     
+     // Verifica se o documento foi redirecionado do URL desejado
+     var referrer = document.referrer;
+     var allowedReferrer = "https://www.policiarcc.com/t24041-ece-ouvidoria";
+ 
+     if (referrer !== allowedReferrer) {
+         document.body.innerHTML = `
+          <div style="text-align: center; color: white; padding: 50px; animation: fadeIn 7s ease;">
+              <img src="https://i.imgur.com/BeYKNMD.png" alt="Logo" style="max-width: 300px; margin-bottom: -55px;">
+              <h1 style="line-height: 1.2em; margin-bottom: 10px;">Acesso Negado</h1>
+              <p style="margin-top: -2%;">Você não tem permissão para acessar esta página.</p>
+              <div style="margin-top: 20px;">
+                  <button onclick="window.location.href='https://www.policiarcc.com/t24041-ece-ouvidoria'" style="padding: 10px 20px; background-color: #660000; color: white; border: none; font-size: 14px; cursor: pointer; border-radius: 5px;">Ir à Ouvidoria</button>
+                  <button onclick="window.location.href='https://www.policiarcc.com/f268-esquadrao-do-corpo-executivo'" style="padding: 10px 20px; background-color: #660000; color: white; border: none; font-size: 14px; margin-right: 10px; cursor: pointer; border-radius: 5px;">Retornar ao subfórum</button>
+              </div>
+          </div>
+      `;
+         document.body.style.background = 'linear-gradient(45deg, #3D0000, #1C0000)';
+         document.body.style.backgroundSize = '400% 400%';
+         document.body.style.animation = 'gradientAnimation 10s ease infinite';
+         document.body.style.margin = '0';
+         document.body.style.height = '100vh';
+ 
+         // Adicionando animações
+         const style = document.createElement('style');
+         style.innerHTML = `
+     @keyframes gradientAnimation {
+         0% { background-position: 0% 50%; }
+         50% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+     }
+ 
+     @keyframes logoEffect {
+         0% { transform: scale(1); }
+         50% { transform: scale(1.1); }
+         100% { transform: scale(1); }
+     }
+ 
+     @keyframes textEffect {
+         0% { transform: scale(1); opacity: 0; }
+         50% { transform: scale(1.2); opacity: 1; }
+         100% { transform: scale(1); opacity: 0; }
+     }
+ 
+     /* Estilo para os botões */
+     button {
+         font-size: 3vw;
+         margin: 5px 5px;
+         padding: 8px 15px;
+         border-radius: 5px;
+         font-family: "Poppins", sans-serif;
+         transition: transform 0.3s ease, background-color 0.3s ease;
+     }
+ 
+     button:hover {
+         transform: scale(1.1);
+         background-color: #07401b; /* Altera a cor de fundo ao passar o mouse */
+     }
+ 
+     /* Media Queries para responsividade */
+     @media (max-width: 768px) {
+         body {
+             margin: 0;
+             padding: 0;
+             overflow-x: hidden;
+             text-align: center;
+         }
+ 
+         h1 {
+             font-size: 5vw;
+             margin: 6%;
+         }
+ 
+         p {
+             font-size: 1.8vw;
+             margin: -3% auto;
+             width: 80%;
+         }
+ 
+         button {
+             font-size: 3vw;
+             margin: 5px 5px;
+             padding: 8px 15px;
+         }
+ 
+         img {
+             width: 100%;
+             height: auto;
+             display: block;
+             margin: 20px auto;
+         }
+     }
+ 
+     @media (max-width: 480px) {
+         body {
+             margin: 0;
+             padding: 0;
+             overflow-x: hidden;
+             text-align: center;
+         }
+ 
+         h1 {
+             font-size: 7vw;
+             margin: 11%;
+         }
+ 
+         p {
+             font-size: 2.5vw;
+             margin: -3% auto;
+             width: 90%;
+         }
+ 
+         button {
+             font-size: 3vw;
+             margin: 5px 5px;
+             padding: 8px 15px;
+         }
+ 
+         img {
+             width: 100%;
+             height: auto;
+             display: block;
+             margin: 20px auto;
+         }
+     }
+ `;
+ 
+         document.head.appendChild(style);
+     }
+ });
+ </script>
+</body>
+</html>
